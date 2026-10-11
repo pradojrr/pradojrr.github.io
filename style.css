@@ -1,0 +1,190 @@
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --bg-color: #0f1714; /* Fundo bem escuro, levemente esverdeado */
+    --card-bg: #1a241f; /* Fundo dos cards */
+    --text-primary: #e0e6e3; /* Texto claro */
+    --text-secondary: #a0afa7; /* Texto secundário */
+    --accent-color: #1a9c5c; /* Verde escuro institucional (F.R.O.G) */
+    --accent-hover: #22c575; /* Verde mais claro para hover */
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+    padding-bottom: 2rem;
+}
+
+/* Navegação e Botão de Idioma */
+nav {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem 5%;
+}
+
+.lang-btn {
+    background-color: var(--card-bg);
+    color: var(--text-primary);
+    border: 1px solid var(--accent-color);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+    background-color: var(--accent-color);
+    color: #fff;
+}
+
+/* Hero Section (Perfil e Links) */
+.hero {
+    text-align: center;
+    padding: 2rem 5%;
+}
+
+.profile-img-container {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 1.5rem auto;
+    border-radius: 50%;
+    padding: 5px;
+    background: linear-gradient(135deg, var(--accent-color), #0f1714);
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--bg-color);
+}
+
+.name {
+    font-size: 2.2rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    font-weight: 400;
+    margin-bottom: 2rem;
+}
+
+/* Redes Sociais */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.social-links a {
+    color: var(--text-primary);
+    font-size: 1.8rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--accent-hover);
+    transform: translateY(-3px);
+}
+
+/* Main Content & Cards */
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.section-card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    border-left: 4px solid var(--accent-color);
+}
+
+.section-card h3 {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 0.5rem;
+}
+
+/* Grid de Projetos */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.project-item {
+    background-color: rgba(255,255,255,0.03);
+    padding: 1.5rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.project-item:hover {
+    transform: translateY(-5px);
+    background-color: rgba(26, 156, 92, 0.05); /* Verde muito translúcido */
+}
+
+.project-icon {
+    font-size: 2rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.project-item h4 {
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.project-item p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+/* Skills Tags */
+.skills-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.skills-tags span {
+    background-color: rgba(26, 156, 92, 0.15);
+    color: var(--accent-hover);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem 5% 0 5%;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Responsividade Básica */
+@media (max-width: 600px) {
+    .name { font-size: 1.8rem; }
+    .profile-img-container { width: 160px; height: 160px; }
+}
