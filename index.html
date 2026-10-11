@@ -1,15 +1,113 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meu Portfólio</title>
-  <style>
-    body { font-family: sans-serif; text-align: center; padding: 50px; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ronaldo Prado Jr. | Engenharia Elétrica</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome para os ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <h1>Olá, mundo!</h1>
-  <p>Meu site hospedado no GitHub Pages.</p>
+    <nav>
+        <button id="langToggle" class="lang-btn">🇺🇸 EN / 🇧🇷 PT</button>
+    </nav>
+
+    <header class="hero">
+        <div class="profile-img-container">
+            <!-- A imagem deve ter este nome exato no seu repositório -->
+            <img src="perfil.jpg" alt="Ronaldo Prado Jr." class="profile-img">
+        </div>
+        <h1 class="name">Ronaldo de Oliveira Prado Júnior</h1>
+        <h2 class="subtitle" data-pt="Estudante de Engenharia Elétrica | UFMS" data-en="Electrical Engineering Student | UFMS">Estudante de Engenharia Elétrica | UFMS</h2>
+        
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/engrpjunior" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/pradojrr" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.instagram.com/prado.engineer/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/5516997651718" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </header>
+
+    <main>
+        <section class="about section-card">
+            <h3 data-pt="Sobre Mim" data-en="About Me">Sobre Mim</h3>
+            <p data-pt="Estudante do 2º ano de Engenharia Elétrica na Universidade Federal de Mato Grosso do Sul (UFMS). Apaixonado por automobilismo, desenvolvimento de powertrains e tecnologias aplicadas a veículos elétricos. Atuo como Capitão e Fundador da F.R.O.G. Racing Team e possuo forte base em simulação de dinâmica veicular, MATLAB, Simulink e sistemas de potência." 
+               data-en="Second-year Electrical Engineering student at the Federal University of Mato Grosso do Sul (UFMS). Passionate about motorsport, powertrain development, and EV technologies. I serve as Captain and Founder of the F.R.O.G. Racing Team and have a strong background in vehicle dynamics simulation, MATLAB, Simulink, and power systems.">
+               Estudante do 2º ano de Engenharia Elétrica na Universidade Federal de Mato Grosso do Sul (UFMS). Apaixonado por automobilismo, desenvolvimento de powertrains e tecnologias aplicadas a veículos elétricos. Atuo como Capitão e Fundador da F.R.O.G. Racing Team e possuo forte base em simulação de dinâmica veicular, MATLAB, Simulink e sistemas de potência.
+            </p>
+        </section>
+
+        <section class="projects section-card">
+            <h3 data-pt="Experiência & Projetos" data-en="Experience & Projects">Experiência & Projetos</h3>
+            <div class="project-grid">
+                
+                <div class="project-item">
+                    <i class="fas fa-car-side project-icon"></i>
+                    <h4>F.R.O.G. Racing Team</h4>
+                    <p data-pt="Capitão e Fundador. Liderança no desenvolvimento de projetos para Fórmula SAE, com foco em dinâmica veicular e powertrain elétrico." 
+                       data-en="Captain and Founder. Leading Formula SAE projects development, focusing on vehicle dynamics and electric powertrains.">
+                       Capitão e Fundador. Liderança no desenvolvimento de projetos para Fórmula SAE, com foco em dinâmica veicular e powertrain elétrico.
+                    </p>
+                </div>
+
+                <div class="project-item">
+                    <i class="fas fa-microchip project-icon"></i>
+                    <h4 data-pt="Inversores & Acionamentos" data-en="Inverters & Drives">Inversores & Acionamentos</h4>
+                    <p data-pt="Pesquisa e desenvolvimento em inversores FOC/SVPWM e sistemas de acionamento elétrico aplicados a veículos de alta performance." 
+                       data-en="R&D in FOC/SVPWM inverters and electric drive systems applied to high-performance vehicles.">
+                       Pesquisa e desenvolvimento em inversores FOC/SVPWM e sistemas de acionamento elétrico aplicados a veículos de alta performance.
+                    </p>
+                </div>
+
+                <div class="project-item">
+                    <i class="fas fa-broadcast-tower project-icon"></i>
+                    <h4>WPT (Wireless Power Transfer)</h4>
+                    <p data-pt="Estudos e simulações focadas em transferência de energia sem fio, explorando novas tecnologias de recarga." 
+                       data-en="Studies and simulations focused on wireless power transfer, exploring new charging technologies.">
+                       Estudos e simulações focadas em transferência de energia sem fio, explorando novas tecnologias de recarga.
+                    </p>
+                </div>
+
+                <div class="project-item">
+                    <i class="fas fa-briefcase project-icon"></i>
+                    <h4 data-pt="EngeFour Jr. & FEJEMS" data-en="EngeFour Jr. & FEJEMS">EngeFour Jr. & FEJEMS</h4>
+                    <p data-pt="Atuação em diretoria na Empresa Júnior, desenvolvendo projetos de engenharia, gestão e prospecção de negócios." 
+                       data-en="Board member at the Junior Enterprise, developing engineering projects, management, and business prospecting.">
+                       Atuação em diretoria na Empresa Júnior, desenvolvendo projetos de engenharia, gestão e prospecção de negócios.
+                    </p>
+                </div>
+
+                <div class="project-item">
+                    <i class="fas fa-graduation-cap project-icon"></i>
+                    <h4 data-pt="Programa de Educação Tutorial (PET)" data-en="Tutorial Education Program (PET)">Programa de Educação Tutorial (PET)</h4>
+                    <p data-pt="Participação em atividades de pesquisa, ensino e extensão voltadas ao avanço da Engenharia Elétrica na comunidade acadêmica." 
+                       data-en="Participation in research, teaching, and extension activities aimed at advancing Electrical Engineering in the academic community.">
+                       Participação em atividades de pesquisa, ensino e extensão voltadas ao avanço da Engenharia Elétrica na comunidade acadêmica.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="skills section-card">
+            <h3 data-pt="Habilidades Técnicas" data-en="Technical Skills">Habilidades Técnicas</h3>
+            <div class="skills-tags">
+                <span>MATLAB</span>
+                <span>Simulink</span>
+                <span>C/C++</span>
+                <span>Python</span>
+                <span>ANSYS Maxwell</span>
+                <span>SolidWorks</span>
+                <span>Altium Designer</span>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Ronaldo Prado Jr.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
