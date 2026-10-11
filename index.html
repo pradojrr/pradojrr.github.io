@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ronaldo Prado Jr. | Engenharia Elétrica</title>
+  <meta name="description" content="Portfólio de Ronaldo Prado Jr. — Engenharia Elétrica, Powertrain e Fórmula SAE na UFMS.">
   <link rel="stylesheet" href="style.css">
-  <!-- Fonte moderna parecida com a usada pelo PELS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -13,15 +13,16 @@
 </head>
 <body class="lang-pt">
 
-  <!-- CABEÇALHO / HEADER -->
+  <!-- CABEÇALHO -->
   <header>
+    <div id="scroll-progress"></div>
     <div class="header-container">
       <a href="#inicio" class="logo">
         <strong>Ronaldo P. Jr.</strong>
         <span>Portfólio</span>
       </a>
 
-      <nav aria-label="Navegação principal">
+      <nav id="main-nav" aria-label="Navegação principal">
         <a href="#inicio"><span lang="pt">Início</span><span lang="en">Home</span></a>
         <a href="#projetos"><span lang="pt">Projetos</span><span lang="en">Projects</span></a>
         <a href="#sobre"><span lang="pt">Sobre</span><span lang="en">About</span></a>
@@ -29,22 +30,24 @@
 
       <div class="header-actions">
         <div class="social-icons">
-          <a href="https://www.linkedin.com/in/engrpjunior" target="_blank"><i class="fab fa-linkedin"></i></a>
-          <a href="https://github.com/pradojrr" target="_blank"><i class="fab fa-github"></i></a>
-          <a href="https://www.instagram.com/prado.engineer/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/engrpjunior" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/pradojrr" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.instagram.com/prado.engineer/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
         </div>
-        <button id="btn-lang" class="btn-lang" aria-label="Mudar idioma">
+        <button id="btn-lang" class="btn-lang" aria-label="Mudar idioma / Change language">
           <i class="fas fa-globe"></i> <span id="lang-indicator">EN</span>
         </button>
-        <a href="https://wa.me/5516997651718" target="_blank" class="btn-primary">
+        <button id="btn-theme" class="btn-lang" aria-label="Alternar tema"><i class="fas fa-moon"></i></button>
+        <a href="https://wa.me/5516997651718" target="_blank" rel="noopener" class="btn-primary btn-contact">
           <span lang="pt">Contato</span><span lang="en">Contact</span>
         </a>
+        <button id="btn-menu" class="btn-lang btn-menu" aria-label="Menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
       </div>
     </div>
   </header>
 
   <main>
-    <!-- SEÇÃO HERO -->
+    <!-- HERO -->
     <section id="inicio" class="hero">
       <div class="hero-content">
         <div class="tag-title">
@@ -68,7 +71,7 @@
         <div class="hero-award">
           <i class="fas fa-trophy"></i>
           <div>
-            <strong lang="pt">Capitão e Fundador</strong><strong lang="en">Captain and Founder</strong><br>
+            <strong lang="pt">Capitão e Fundador</strong><strong lang="en">Captain and Founder</strong>
             <span>F.R.O.G. Racing Team</span>
           </div>
         </div>
@@ -80,7 +83,7 @@
       </div>
     </section>
 
-    <!-- IMPACTO EM NÚMEROS -->
+    <!-- TRAJETÓRIA -->
     <section class="impact-section">
       <div class="impact-header">
         <span lang="pt">Trajetória e Atuação</span>
@@ -89,8 +92,7 @@
       <div class="impact-grid">
         <div class="impact-card">
           <div class="impact-icon"><i class="fas fa-flag-checkered"></i></div>
-          <div class="impact-title" lang="pt">F.R.O.G. Racing</div>
-          <div class="impact-title" lang="en">F.R.O.G. Racing</div>
+          <div class="impact-title">F.R.O.G. Racing</div>
           <div class="impact-desc" lang="pt">Fundador & Capitão FSAE</div>
           <div class="impact-desc" lang="en">Founder & FSAE Captain</div>
         </div>
@@ -115,14 +117,14 @@
       </div>
     </section>
 
-    <!-- PROJETOS E EXPERIÊNCIA -->
+    <!-- PROJETOS -->
     <section id="projetos" class="projects-section">
       <div class="section-title">
         <span lang="pt">Atuação e em breve</span>
         <span lang="en">Roles & coming up</span>
       </div>
       <div class="projects-list">
-        
+
         <a href="#" class="project-card">
           <div class="project-icon-box"><i class="fas fa-car"></i></div>
           <div class="project-info">
@@ -152,8 +154,7 @@
           <div class="project-info">
             <span class="project-status" lang="pt">Softwares & Ferramentas</span>
             <span class="project-status" lang="en">Software & Tools</span>
-            <strong lang="pt">MATLAB, Simulink, ANSYS & SolidWorks</strong>
-            <strong lang="en">MATLAB, Simulink, ANSYS & SolidWorks</strong>
+            <strong>MATLAB, Simulink, ANSYS & SolidWorks</strong>
             <span lang="pt">Uso intensivo para modelagem CAD, simulações 3D e scripts em C/C++ e Python.</span>
             <span lang="en">Intensive use for CAD modeling, 3D simulations and C/C++/Python scripting.</span>
           </div>
@@ -162,11 +163,11 @@
       </div>
     </section>
 
-    <!-- SOBRE (MISSÃO, VISÃO E VALORES) -->
+    <!-- SOBRE -->
     <section id="sobre" class="about-section">
       <div class="about-header">
-        <span lang="pt">Quem sou</span>
-        <span lang="en">Who I am</span>
+        <span class="about-kicker" lang="pt">Quem sou</span>
+        <span class="about-kicker" lang="en">Who I am</span>
         <h2 lang="pt">Engenheiro em Formação</h2>
         <h2 lang="en">Engineer in Training</h2>
         <p lang="pt">Apaixonado por desafios técnicos, automobilismo e pela criação de tecnologias que movem o futuro.</p>
@@ -177,12 +178,12 @@
         <div class="about-text">
           <p lang="pt">Estudante do 2º ano na UFMS, minha trajetória é marcada pelo forte envolvimento em projetos extracurriculares. Desde a liderança na <strong>Empresa Júnior (EngeFour Jr.)</strong> até a fundação da primeira equipe de Fórmula SAE de Mato Grosso do Sul.</p>
           <p lang="en">A 2nd-year student at UFMS, my path is marked by strong involvement in extracurricular projects. From leadership in the <strong>Junior Enterprise (EngeFour Jr.)</strong> to founding the first Formula SAE team in Mato Grosso do Sul.</p>
-          
+
           <div class="skills-tags">
             <span>Fórmula 1 / WEC</span>
             <span>Powertrain</span>
-            <span>Eletrônica de Potência</span>
-            <span>Liderança</span>
+            <span lang="pt">Eletrônica de Potência</span><span lang="en">Power Electronics</span>
+            <span lang="pt">Liderança</span><span lang="en">Leadership</span>
           </div>
         </div>
 
@@ -206,8 +207,8 @@
     <div class="footer-content">
       <p>&copy; 2026 Ronaldo de Oliveira Prado Júnior.</p>
       <div class="footer-links">
-        <a href="https://github.com/pradojrr" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/engrpjunior" target="_blank">LinkedIn</a>
+        <a href="https://github.com/pradojrr" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/engrpjunior" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </div>
   </footer>
