@@ -1,44 +1,60 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const body = document.body;
   const root = document.documentElement;
 
-  /* ---------- helpers de armazenamento (nunca quebram o site) ---------- */
+  /* ---------- armazenamento seguro (nunca quebra o site) ---------- */
   const store = {
     get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
     set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
   };
 
-  /* ---------- IDIOMA PT / EN ---------- */
+  /* ---------- IDIOMA PT / EN ----------
+     Todo elemento com data-en é traduzido. O texto original (PT) é
+     guardado automaticamente e restaurado ao voltar para português. */
+  const translatable = document.querySelectorAll('[data-en]');
+  translatable.forEach(el => { el.dataset.pt = el.innerHTML; });
+
+  const meta = {
+    pt: {
+      title: 'Ronaldo Prado Jr. | Engenharia Elétrica',
+      desc: 'Portfólio de Ronaldo Prado Jr. — Engenharia Elétrica, Powertrain e Fórmula SAE na UFMS.'
+    },
+    en: {
+      title: 'Ronaldo Prado Jr. | Electrical Engineering',
+      desc: 'Portfolio of Ronaldo Prado Jr. — Electrical Engineering, Powertrain and Formula SAE at UFMS.'
+    }
+  };
+  const metaDesc = document.querySelector('meta[name="description"]');
   const langBtn = document.getElementById('btn-lang');
   const langIndicator = document.getElementById('lang-indicator');
 
   function setLang(lang) {
-    body.classList.remove('lang-pt', 'lang-en');
-    body.classList.add('lang-' + lang);
+    translatable.forEach(el => { el.innerHTML = el.dataset[lang]; });
     root.lang = lang === 'pt' ? 'pt-BR' : 'en';
+    root.dataset.lang = lang;
+    document.title = meta[lang].title;
+    if (metaDesc) metaDesc.setAttribute('content', meta[lang].desc);
     // o botão mostra o idioma para o qual vai trocar
     langIndicator.textContent = lang === 'pt' ? 'EN' : 'PT';
     store.set('lang', lang);
   }
 
-  const savedLang = store.get('lang');
-  const browserLang = (navigator.language || 'pt').toLowerCase().startsWith('pt') ? 'pt' : 'en';
-  setLang(savedLang || browserLang);
+  const saved = store.get('lang');
+  const browser = (navigator.language || 'pt').toLowerCase().startsWith('pt') ? 'pt' : 'en';
+  setLang(saved === 'pt' || saved === 'en' ? saved : browser);
 
   langBtn.addEventListener('click', () => {
-    setLang(body.classList.contains('lang-pt') ? 'en' : 'pt');
+    setLang(root.dataset.lang === 'pt' ? 'en' : 'pt');
   });
 
   /* ---------- TEMA CLARO / ESCURO ---------- */
   const themeBtn = document.getElementById('btn-theme');
   const themeIcon = themeBtn.querySelector('i');
-
   function setTheme(theme) {
     root.setAttribute('data-theme', theme);
     themeIcon.className = theme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
     store.set('theme', theme);
   }
-  setTheme(store.get('theme') || 'dark');
+  setTheme(store.get('theme') === 'light' ? 'light' : 'dark');
   themeBtn.addEventListener('click', () => {
     setTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
   });
@@ -54,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
     a.addEventListener('click', () => nav.classList.remove('open'))
   );
 
-  /* ---------- BARRA DE PROGRESSO DE ROLAGEM ---------- */
+  /* ---------- BARRA DE PROGRESSO ---------- */
   const bar = document.getElementById('scroll-progress');
   function updateProgress() {
     const max = document.documentElement.scrollHeight - window.innerHeight;
@@ -63,9 +79,9 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', updateProgress, { passive: true });
   updateProgress();
 
-  /* ---------- ANIMAÇÃO AO ROLAR (reveal) ---------- */
+  /* ---------- ANIMAÇÃO AO ROLAR ---------- */
   const revealTargets = document.querySelectorAll(
-    '.hero-content, .hero-image-wrapper, .impact-card, .project-card, .about-header, .about-text, .mvv-item'
+    '.hero-content, .hero-image-wrapper, .impact-card, .project-card, .about-header, .about-card, .interest-strip'
   );
   if ('IntersectionObserver' in window) {
     const io = new IntersectionObserver((entries) => {
@@ -75,10 +91,10 @@ document.addEventListener('DOMContentLoaded', () => {
           io.unobserve(e.target);
         }
       });
-    }, { threshold: 0.15 });
+    }, { threshold: 0.12 });
     revealTargets.forEach((el, i) => {
       el.classList.add('reveal');
-      el.style.transitionDelay = (i % 4) * 80 + 'ms';
+      el.style.transitionDelay = (i % 3) * 80 + 'ms';
       io.observe(el);
     });
   }
